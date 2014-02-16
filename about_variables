@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+
+# variables are set like so
+counter=0
+test $counter == 1 # and are accessed by `$`
+
+# not like this
+counter = 1
+
+# they can be set to lots of things
+string="my string"
+number=0
+float=0.5
+undefined=
+command_output=$(echo this is my output!)
+
+test "$string" == "$command_output"
+
+# we can perform calculations with their values
+test $(($number + 1)) == 2
+
+# we can even interpolate with double quotes
+var="ate"
+interp="seven $var nine"
+test $interp == "seven eight nine"
+
+# TODO: tr
+# special variables?
