@@ -21,7 +21,7 @@ error() {
 
 trap 'error ${LINENO} ${BASH_SOURCE}' ERR
 
-source about_comments
+source about_basics
 source about_variables
 source about_functions
 source about_control_statements
