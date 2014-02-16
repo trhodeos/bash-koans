@@ -5,18 +5,18 @@
 
 # denote comments with pound signs
 
-# run commands all sorts of ways
+echo 'run commands all sorts of ways'
 pwd        # directly
 eval "pwd" # strings can be run as commands via 'eval'
 
-# run commands inline, and use their output as input for other commands
+echo 'run commands inline, and use their output as input for other commands'
 echo `pwd`   # via backticks
 echo $(pwd)  # via $()
 
 basename $(pwd)
 test $(basename $(pwd)) == "obvs-foobar"
 
-# strings are pretty important for day-to-day programming
+echo 'strings are pretty important for day-to-day programming'
 echo "use either double quotes"
 echo 'or single quotes'
 echo 'but dont mix them"
@@ -24,9 +24,9 @@ echo 'but dont mix them"
 echo "make sure to escape "s"
 echo 'and 's'
 
-# double quoted strings are interpolated
+echo 'double quoted strings are interpolated:'
 echo "I am in `pwd`" # meaning commands and variables are injected into the string
-# where single quoted strings are not interpolated
+echo 'where single quoted strings are not interpolated:'
 echo 'I am in `pwd`'
 
 
