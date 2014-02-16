@@ -1,0 +1,50 @@
+#!/usr/bin/env bash
+
+function hello() {
+    echo "hello world!"
+}
+
+echo 'variables are great and all, but what if we want to repeat functionality?'
+echo 'this is where functions come into the rescue'
+hello
+hello
+
+echo 'arguments shouldnt be defined in the signature, but can be accessed by $1, $2, ..., $n'
+function heres(who) {
+    echo "heeeeeeres $who"
+}
+heres "johnny!"
+
+echo 'check the number of arguments passed into the function with $#'
+function args_matey() {
+    echo "number of args: $#"
+}
+args_matey
+args_matey "one" "two" "three"
+
+echo 'functions can return "exit codes" with "return"'
+function zero() {
+    return 0
+}
+zero
+test $? == 1
+echo 'more on exit codes later'
+
+echo 'functions can also "return" strings with "echo"'
+test "$(args_matey 'one')" == 'number of args: 2'
+echo 'more on pipes later'
+
+echo 'scoping of variables in functions may not be what you think'
+global=1
+function reset() {
+    global=2
+}
+reset
+test $global == 1
+
+echo 'however, we can make locally scoped variables with "local"'
+function reset() {
+    local global=3
+}
+reset
+test $global == 3
