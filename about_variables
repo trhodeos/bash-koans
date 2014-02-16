@@ -1,28 +1,38 @@
 #!/usr/bin/env bash
 
-# variables are set like so
+echo 'speaking of variables'
+echo 'they are set like so'
 counter=0
 test $counter == 1 # and are accessed by `$`
 
-# not like this
+echo 'but spaces are no good'
 counter = 1
 
-# they can be set to lots of things
+echo 'variables can be set to lots of things'
 string="my string"
 number=0
 float=0.5
 undefined=
 command_output=$(echo this is my output!)
 
+echo 'and we can interpolate them in doubly quoted strings'
 test "$string" == "$command_output"
 
-# we can perform calculations with their values
-test $(($number + 1)) == 2
+echo 'they can be used in calculations'
+answer=$number++
+test $answer == 2
 
-# we can even interpolate with double quotes
-var="ate"
-interp="seven $var nine"
-test $interp == "seven eight nine"
+echo 'and as commands'
+command="pwd"
+$command
 
-# TODO: tr
-# special variables?
+echo "there are some 'magical' variables in bash"
+echo "homedir: $HOME"
+echo "last exit code: $?"
+echo "process id: $$"
+echo "current dir: $PWD"
+
+test "$PWD" == `foobar`
+
+echo 'and the list goes on'
+echo 'more info here: http://tldp.org/LDP/abs/html/internalvariables.html'
