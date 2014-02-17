@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-function hello() {
+hello() {
     echo "hello world!"
 }
 
@@ -10,20 +10,20 @@ hello
 hello
 
 echo 'arguments shouldnt be defined in the signature, but can be accessed by $1, $2, ..., $n'
-function heres(who) {
+heres(who) {
     echo "heeeeeeres $who"
 }
 heres "johnny!"
 
 echo 'check the number of arguments passed into the function with $#'
-function args_matey() {
+args_matey() {
     echo "number of args: $#"
 }
 args_matey
 args_matey "one" "two" "three"
 
 echo 'functions can return "exit codes" with "return"'
-function zero() {
+zero() {
     return 0
 }
 zero
@@ -36,14 +36,14 @@ echo 'more on pipes later'
 
 echo 'scoping of variables in functions may not be what you think'
 global=1
-function reset() {
+reset() {
     global=2
 }
 reset
 test $global == 1
 
 echo 'however, we can make locally scoped variables with "local"'
-function reset() {
+reset() {
     local global=3
 }
 reset
