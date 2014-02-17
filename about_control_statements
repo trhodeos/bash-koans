@@ -58,8 +58,8 @@ if 1; then
 fi
 test $executed == "true"
 
-echo 'case statements are like switch statements'
-function transform() {
+echo 'case statements allow you to specify if/elseif blocks clearly'
+transform() {
     case $1 in
         1)
             echo "one"
