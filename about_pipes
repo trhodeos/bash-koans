@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+echo 'how do we pass complex information between programs, you may be asking'
+echo 'and boy, do I have the answer for you'
+
+test $(echo 'pipes allow us to string together simple programs to do something complex' | wc -w) == 10
+
+echo 'denoted by "|", pipes allow us to take the output of one program and feed it into the input of another'
+
+echo 'oh, and you can chain them'
+test $(cat ./about_pipes | wc -w | echo -) == 1
+
+echo 'xargs should be used if you want to perform an action on each and every item'
+test $(ls *.sh | xargs cat | wc -l) == 123
