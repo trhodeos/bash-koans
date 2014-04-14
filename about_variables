@@ -3,9 +3,9 @@
 echo 'speaking of variables'
 echo 'they are set like so'
 counter=0
-test $counter == 1 # and are accessed by `$`
+test counter == 1 # and are accessed by `$`
 
-echo 'but spaces are no good'
+echo 'but spaces are no good when setting values'
 counter = 1
 
 echo 'variables can be set to lots of things'

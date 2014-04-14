@@ -5,7 +5,7 @@ hello() {
 }
 
 echo 'variables are great and all, but what if we want to repeat functionality?'
-echo 'this is where functions come into the rescue'
+echo 'this is where functions come to the rescue'
 hello
 hello
 
@@ -32,7 +32,7 @@ echo 'more on exit codes later'
 
 echo 'functions can also "return" strings with "echo"'
 test "$(args_matey 'one')" == 'number of args: 2'
-echo 'more on pipes later'
+echo 'This is possible because of unix pipes. more on pipes later'
 
 echo 'scoping of variables in functions may not be what you think'
 global=1
@@ -42,6 +42,7 @@ reset() {
 reset
 test $global == 1
 
+global=1
 echo 'however, we can make locally scoped variables with "local"'
 reset() {
     local global=3

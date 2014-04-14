@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # use this ^ to tell bash which interpreter to run this script with.
 
-##// comments aren't C/C++ style
+// comments aren't C/C++ style
 
 # denote comments with pound signs
 
